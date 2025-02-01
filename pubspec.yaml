@@ -1,0 +1,21 @@
+name: audio_recorder
+description: "A basic flutter application that recordes and plays back the audio."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.6.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_sound: ^9.2.5
+  permission_handler: ^11.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
