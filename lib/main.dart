@@ -53,18 +53,17 @@ class AudioRecorderScreenState extends State<AudioRecorderScreen> {
   }
 
   Future<void> _initializeRecorder() async {
-    // Request microphone permission at the start
+    // request microphone permission at the start
     var status = await Permission.microphone.request();
 
     if (!mounted) {
-      return; // Check if the widget is still mounted before using context
+      return; // to make sure that widget is mounted before using context
     }
 
     if (status.isGranted) {
-      // Open the recorder in advance
+      // open the recorder in advance
       await _recorder.openRecorder();
     } else {
-      // Show an alert if permission is denied
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Microphone permission is required to record audio.'),
@@ -121,7 +120,7 @@ class AudioRecorderScreenState extends State<AudioRecorderScreen> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const SizedBox(), // Empty space to push elements to the center
+        const SizedBox(),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
